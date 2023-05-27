@@ -20,7 +20,9 @@ function App() {
 	useEffect(() => {
 		const fetchData = async () => {
 			try {
-				const response = await axios.get('https://nataliatestvs.azurewebsites.net/api/shop');
+				const response = await axios.get(
+					'https://nataliatestvs.azurewebsites.net/api/shop'
+				);
 				setAllShopsData(response.data);
 				setLoading(false);
 				console.log(allShopsData);
@@ -29,7 +31,7 @@ function App() {
 			}
 		};
 		fetchData();
-	}, []);
+	}, [allShopsData]);
 
 	if (loading) {
 		return (
