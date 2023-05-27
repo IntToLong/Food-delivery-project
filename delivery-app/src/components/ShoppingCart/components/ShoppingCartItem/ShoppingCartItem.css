@@ -50,3 +50,7 @@ font-weight: 600;
 .cartItem__title{
 	font-size: 1.2rem;
 }
+
+.cartItem__quantity button {
+	width: 30px;
+}
