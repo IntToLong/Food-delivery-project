@@ -15,7 +15,7 @@ import { isUserDataValid } from '../../Helpers/isUserDataValid';
 import './ShoppingCart.css';
 
 function ShoppingCart() {
-	const { shoppingCart, setShoppingCart } = useContext(ShoppingCartContext);
+	const { shoppingCart } = useContext(ShoppingCartContext);
 
 	const [userData, setUserData] = useState({
 		name: '',
@@ -38,7 +38,10 @@ function ShoppingCart() {
 		if (isUserDataValid(userData)) {
 			console.log('Submitting data:', orderData);
 			axios
-				.post('http://localhost:4000/api/order', orderData)
+				.post(
+					'https://nataliatestvs.azurewebsites.net/api/order',
+					orderData
+				)
 				.then(function (response) {
 					console.log(response);
 				})

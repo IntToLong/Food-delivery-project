@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from 'react';
+import { useState, useEffect } from 'react';
 import { Audio } from 'react-loader-spinner';
 import { Routes, Route } from 'react-router-dom';
 import axios from 'axios';
@@ -20,9 +20,12 @@ function App() {
 	useEffect(() => {
 		const fetchData = async () => {
 			try {
-				const response = await axios.get('http://localhost:4000/api/shop');
+				const response = await axios.get(
+					'https://nataliatestvs.azurewebsites.net/api/shop'
+				);
 				setAllShopsData(response.data);
 				setLoading(false);
+				console.log(allShopsData);
 			} catch (error) {
 				console.error('Error fetching data:', error);
 			}
