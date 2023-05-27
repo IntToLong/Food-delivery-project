@@ -1,0 +1,11 @@
+.error-page {
+	max-height: 20vh;
+	
+}
+
+.error-page img {
+	display: block;
+	margin: 0 auto;
+	width: 80%;
+	height: auto;
+}

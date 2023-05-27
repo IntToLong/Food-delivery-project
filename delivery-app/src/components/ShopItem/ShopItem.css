@@ -1,0 +1,22 @@
+.shopItemContainer {
+	width: 33%;
+	background-color: #fff;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.shopItem__img {
+	width: 80%;
+	height: auto;
+	margin: 0 auto;
+}
+
+.shopItem__img img {
+	width: 100%;
+}
+
+.shopItemContainer p:first-of-type {
+	margin-bottom: 0;
+}

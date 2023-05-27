@@ -1,0 +1,21 @@
+.input::placeholder {
+	color: #8a8686;
+}
+
+.input {
+	padding: 5px 15px;
+    width: 80%;
+	border: 2px solid #354733;
+	line-height: 20px;
+	border-radius: 5px;
+    margin-bottom: 2vh;
+}
+
+.input:focus {
+	background-color: #d8e4c932;
+}
+
+.label-text {
+	display: block;
+	text-align: start;
+}

@@ -1,0 +1,24 @@
+.lovo-wrapper {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.lovo {
+	background: url('../../../../../public/lovo_logo1.png') center no-repeat;
+	width: 90%;
+	height: 90%;
+	background-size: contain;
+	position: relative;
+}
+
+.lovo-wrapper p {
+	color: #ffcd14;
+	font-size: 1.5rem;
+	font-weight: 600;
+	margin-top: 8rem;
+	position: absolute;
+}

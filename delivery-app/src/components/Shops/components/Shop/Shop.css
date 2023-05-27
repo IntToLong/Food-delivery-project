@@ -1,0 +1,13 @@
+.shop {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 1vh 2vw;
+	height: 10vh;
+	margin-bottom: 2vh;
+	min-width: 100%;
+}
+
+.shopContainer{
+	min-width: 100%;
+}
