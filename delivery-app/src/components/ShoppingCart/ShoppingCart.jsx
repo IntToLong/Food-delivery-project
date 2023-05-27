@@ -38,10 +38,7 @@ function ShoppingCart() {
 		if (isUserDataValid(userData)) {
 			console.log('Submitting data:', orderData);
 			axios
-				.post(
-					'https://nataliatestvs.azurewebsites.net/api/order',
-					orderData
-				)
+				.post('https://nataliatestvs.azurewebsites.net/api/order', orderData)
 				.then(function (response) {
 					console.log(response);
 				})
