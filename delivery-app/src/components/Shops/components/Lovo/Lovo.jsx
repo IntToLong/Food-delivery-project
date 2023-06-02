@@ -1,5 +1,3 @@
-
-
 import './Lovo.css';
 
 function Lovo() {
@@ -9,7 +7,6 @@ function Lovo() {
 			<p>Your best delivery</p>
 		</div>
 	);
-		
 }
 
 export default Lovo;

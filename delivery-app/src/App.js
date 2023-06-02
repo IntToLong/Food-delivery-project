@@ -1,10 +1,9 @@
-import { useState, useEffect } from 'react';
+import { useContext, useState } from 'react';
 import { Audio } from 'react-loader-spinner';
 import { Routes, Route } from 'react-router-dom';
-import axios from 'axios';
 
 import { ShoppingCartProvider } from './Context/ShoppingCartContext';
-import { DataProvider } from './Context/DataContext';
+import { DataContext } from './Context/DataContext';
 
 import ErrorPage from './ErrorPage/ErrorPage';
 import Wrapper from './Wrapper/Wrapper';
@@ -14,27 +13,9 @@ import ShoppingCart from './components/ShoppingCart/ShoppingCart';
 import './App.css';
 
 function App() {
-	const [allShopsData, setAllShopsData] = useState(null);
-	const [loading, setLoading] = useState(true);
-
-	useEffect(() => {
-		const fetchData = async () => {
-			try {
-				const response = await axios.get(
-					'https://nataliatestvs.azurewebsites.net/api/shop'
-				);
-				setAllShopsData(response.data);
-				setLoading(false);
-				console.log(allShopsData);
-			} catch (error) {
-				console.error('Error fetching data:', error);
-			}
-		};
-		fetchData();
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, []);
-
-	if (loading) {
+	const {data} = useContext(DataContext);
+	const [chosen, setChosen] = useState(false);
+	if (data.length === 0) {
 		return (
 			<div className={'loader'}>
 				<Audio
@@ -51,18 +32,19 @@ function App() {
 	}
 
 	return (
-		<DataProvider>
-			<ShoppingCartProvider>
-				<Routes>
-					<Route path='/' element={<Wrapper />}>
-						<Route path='/shop' element={<Shops />} />
-						<Route path='/' element={<Shops />} />
-						<Route path='/shopping-cart' element={<ShoppingCart />} />
-					</Route>
-					<Route path='*' element={<ErrorPage />} />
-				</Routes>
-			</ShoppingCartProvider>
-		</DataProvider>
+		<ShoppingCartProvider>
+			<Routes>
+				<Route path='/' element={<Wrapper />}>
+					<Route
+						path='/shop'
+						element={<Shops chosen={chosen} setChosen={setChosen} />}
+					/>
+					<Route path='/' element={<Shops />} />
+					<Route path='/shopping-cart' element={<ShoppingCart />} />
+				</Route>
+				<Route path='*' element={<ErrorPage />} />
+			</Routes>
+		</ShoppingCartProvider>
 	);
 }
 

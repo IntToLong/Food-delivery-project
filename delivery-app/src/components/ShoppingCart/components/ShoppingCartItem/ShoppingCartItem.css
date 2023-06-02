@@ -9,6 +9,7 @@
 .cartItem {
 	display: flex;
 	margin-bottom: 2vh;
+	background-color: #f8f9fb;
 }
 
 .cartItem__img {
@@ -30,27 +31,29 @@
 }
 
 .cartItem__img {
-    width: 40%;
-    margin: 0 auto;
+	width: 40%;
+	margin: 0 auto;
 }
 
 .cartItem__img img {
-    width: 70%;
+	width: 70%;
 }
 
 .cartItem__info {
 	width: 70%;
 }
 
-
-.cartItem__title, .cartItem__price{
-font-weight: 600;
+.cartItem__title,
+.cartItem__price {
+	font-weight: 600;
 }
 
-.cartItem__title{
+.cartItem__title {
 	font-size: 1.2rem;
 }
 
 .cartItem__quantity button {
 	width: 30px;
 }
+
+

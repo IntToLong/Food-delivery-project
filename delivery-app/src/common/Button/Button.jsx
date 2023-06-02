@@ -9,6 +9,7 @@ function Button(props) {
 			type={props.type}
 			value={props.value}
 			disabled={props.disabled}
+			form={props.form}
 		>
 			{props.value}
 		</button>

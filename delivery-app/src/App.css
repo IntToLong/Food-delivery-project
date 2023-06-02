@@ -8,10 +8,11 @@
 	justify-content: center;
 	align-items: center;
 }
+
 html {
-	/* margin: 0 10px 10px; */
 	background-color: #f8f9fb;
 	font-family: 'Mont Blanc', sans-serif;
+	scroll-behavior: smooth;
 }
 
 @media (prefers-reduced-motion: no-preference) {

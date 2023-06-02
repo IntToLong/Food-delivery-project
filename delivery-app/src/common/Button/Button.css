@@ -25,6 +25,11 @@
 	background-color: #00392e88;
 	cursor: default;
 }
+
 .button:disabled:hover {
-	border-color: #00392e61;
+	border-color: #00a183;
+}
+
+.button:enabled:active {
+	box-shadow: 2px 2px 5px #00392e61;
 }

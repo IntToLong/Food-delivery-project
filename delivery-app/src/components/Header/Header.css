@@ -1,4 +1,5 @@
-.line {
+
+.header_line {
 	border-left: 2px solid #000;
 	height: 30px;
 }
@@ -6,12 +7,15 @@
 .header {
 	font-size: 1.2rem;
 	display: flex;
+	align-items: center;
 	gap: 10px;
 	line-height: 30px;
 	height: 6vh;
-	box-shadow: 0px 15px 10px -15px #111; 
+	box-shadow: 0px 15px 10px -15px #111;
 	margin: 2vh 0 2vh;
 	padding: 2vh 4vw;
+	position: sticky;
+    top: 0;
 	
 }
 
@@ -25,4 +29,41 @@ a {
 .header p:hover {
 	font-weight: bold;
 	color: #00a183;
+}
+
+.header_item-quantity {
+	border-radius: 50%;
+	font-size: 1rem;
+	font-weight: 600;
+	line-height: 0.8rem;
+	border-radius: 25%;
+	position: relative;
+}
+
+.header_item-quantity div {
+	box-sizing: border-box;
+	color: #fff;
+	position: absolute;
+	width: 18px;
+	height: 18px;
+	line-height: 18px;
+	padding: 0 4px;
+	font-size: 10px;
+	border-radius: 50%;
+	text-align: center;
+	top: -18px;
+	right: -8px;
+	background-color: #00a183;
+}
+
+.header_cart {
+	display: inline-block;
+}
+
+.a {
+	display: inline-block;
+}
+
+.header_item-quantity__invisible {
+	opacity: 0;
 }

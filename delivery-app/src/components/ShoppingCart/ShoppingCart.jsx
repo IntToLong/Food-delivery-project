@@ -1,4 +1,5 @@
 import { useContext, useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import uuid from 'react-uuid';
 import axios from 'axios';
 
@@ -11,11 +12,13 @@ import Button from '../../common/Button/Button';
 
 import { getTotalPrice } from '../../Helpers/getTotalPrice';
 import { isUserDataValid } from '../../Helpers/isUserDataValid';
+import { orderURL } from '../../constants';
 
 import './ShoppingCart.css';
 
 function ShoppingCart() {
-	const { shoppingCart } = useContext(ShoppingCartContext);
+	const { shoppingCart, setShoppingCart } = useContext(ShoppingCartContext);
+	const navigate = useNavigate();
 
 	const [userData, setUserData] = useState({
 		name: '',
@@ -38,13 +41,22 @@ function ShoppingCart() {
 		if (isUserDataValid(userData)) {
 			console.log('Submitting data:', orderData);
 			axios
-				.post('https://nataliatestvs.azurewebsites.net/api/order', orderData)
+				.post(orderURL, orderData)
 				.then(function (response) {
 					console.log(response);
 				})
 				.catch(function (error) {
 					console.log(error);
 				});
+			setUserData({
+				name: '',
+				email: '',
+				phone: '',
+				address: '',
+			});
+			setShoppingCart([]);
+			alert('✨Your order has been successfully placed. We can\'t wait to satisfy your hunger!');
+			navigate('/');
 		} else {
 			alert('Please fill in all the fields.');
 			console.log('Please fill in all the fields.');
@@ -73,7 +85,7 @@ function ShoppingCart() {
 				<p className={'totalPrice'}>
 					<span className='bold'>Total price:</span> {totalPrice} $
 				</p>
-				<Button value={'Submit'} onClick={handleSubmit} />
+				<Button form={'userDataForm'} value={'Submit'} onClick={handleSubmit} />
 			</div>
 		</Card>
 	);

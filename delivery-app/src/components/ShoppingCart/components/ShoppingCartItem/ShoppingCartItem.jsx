@@ -50,11 +50,11 @@ function ShoppingCartItem(props) {
 				</p>
 				<div className='cartItem__quantity'>
 					<button onClick={decrease}>
-						{<img src='../../../../../minus-solid.svg' alt='#' />}
+						{<img src='../../../../../minus-solid.svg' alt='minus' />}
 					</button>
 					<p className='cartItem__counter'>{quantity}</p>
 					<button onClick={increase}>
-						{<img src='../../../../../plus-solid.svg' alt='#' />}
+						{<img src='../../../../../plus-solid.svg' alt='plus' />}
 					</button>
 				</div>
 			</div>
