@@ -1,9 +1,8 @@
-import { useContext, useState } from 'react';
-import { Audio } from 'react-loader-spinner';
+import { useState } from 'react';
+
 import { Routes, Route } from 'react-router-dom';
 
 import { ShoppingCartProvider } from './Context/ShoppingCartContext';
-import { DataContext } from './Context/DataContext';
 
 import ErrorPage from './ErrorPage/ErrorPage';
 import Wrapper from './Wrapper/Wrapper';
@@ -13,23 +12,7 @@ import ShoppingCart from './components/ShoppingCart/ShoppingCart';
 import './App.css';
 
 function App() {
-	const {data} = useContext(DataContext);
 	const [chosen, setChosen] = useState(false);
-	if (data.length === 0) {
-		return (
-			<div className={'loader'}>
-				<Audio
-					height='80'
-					width='80'
-					radius='9'
-					color='#016e5a'
-					ariaLabel='three-dots-loading'
-					wrapperStyle
-					wrapperClass
-				/>
-			</div>
-		);
-	}
 
 	return (
 		<ShoppingCartProvider>

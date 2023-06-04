@@ -1,5 +1,5 @@
-
 import React, { useState, useEffect, createContext } from 'react';
+import { Audio } from 'react-loader-spinner';
 import axios from 'axios';
 
 import { dataURL } from '../constants';
@@ -40,7 +40,19 @@ const DataProvider = ({ children }) => {
 				setCurrentItems,
 			}}
 		>
-			{!loading && children}
+			{loading ? (
+				<div className={'loader'}>
+					<Audio
+						height='80'
+						width='80'
+						radius='9'
+						color='#016e5a'
+						ariaLabel='three-dots-loading'
+					/>
+				</div>
+			) : (
+				children
+			)}
 		</DataContext.Provider>
 	);
 };
